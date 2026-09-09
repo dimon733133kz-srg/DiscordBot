@@ -9,7 +9,6 @@ const {
 
 const TOKEN = process.env.TOKEN;
 const CLIENT_ID = '1547181055994232923';
-const GUILD_ID = '732632368111943680';
 
 const client = new Client({
     intents: [
@@ -109,7 +108,7 @@ const rest = new REST({ version: '10' }).setToken(TOKEN);
 async function registerCommands() {
     try {
         await rest.put(
-            Routes.applicationGuildCommands(CLIENT_ID, GUILD_ID),
+            Routes.applicationGuildCommands(CLIENT_ID),
             { body: commands }
         );
 
