@@ -108,7 +108,7 @@ const rest = new REST({ version: '10' }).setToken(TOKEN);
 async function registerCommands() {
     try {
         await rest.put(
-            Routes.applicationGuildCommands(CLIENT_ID),
+            Routes.applicationCommands(CLIENT_ID),
             { body: commands }
         );
 
